@@ -1,0 +1,107 @@
+---
+import articleimg from '../images/illustration-article.svg'
+import avatar from '../images/image-avatar.webp'
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap");
+
+  * {
+    box-sizing: border-box;
+    font-family: "Figtree", sans-serif;
+    margin: 0px;
+    padding: 0;
+  }
+
+  body {
+    background-color: hsl(47, 88%, 63%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: auto;
+    font-size: 16px;
+  }
+  .card {
+    display: grid;
+    max-width: 380px;
+    height: 525px;
+    padding: 1.25rem;
+
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+  }
+
+  .card img {
+    border-radius: 0.75rem;
+  }
+
+  .card h1 {
+    padding-top: 0.75rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+  .card h1:hover {
+    color: hsl(47, 88%, 63%);
+  }
+
+  .card p:nth-child(2) {
+    font-weight: 100;
+  }
+
+  .card__chip {
+    background-color: hsl(47, 88%, 63%);
+    padding: 0.5em 1rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    border: none;
+    width: max-content;
+  }
+  .card__chip:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 7%);
+    color: hsl(0, 0%, 100%)
+}
+
+.content {
+    color: hsl(0, 0%, 50%);
+    line-height: 1.5;
+    padding: 0.5rem 0rem;
+    font-weight: 500;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+}
+
+.user img {
+    width: 10%;
+}
+</style>
+
+<main>
+  <div class="card">
+    <img src={articleimg.src} alt="card image" />
+    <section>
+      <p class="card__chip">Learning</p>
+      <p>Published 21 Dec 2023</p>
+      <h1>HTML & CSS foundations</h1>
+      <p class="content">
+        These languages are the backbone of every website, defining structure,
+        content, and presentation.
+      </p>
+
+      <div class="user">
+        <img src={avatar.src} alt="user-profile" />
+        <h4>Greg Hooper</h4>
+      </div>
+    </section>
+  </div>
+</main>
