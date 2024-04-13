@@ -1,0 +1,105 @@
+---
+import avatar from "../images/social/avatar-jessica.jpeg";
+---
+
+<style>
+  * {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: auto;
+
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .card {
+    background-color: hsl(0, 0%, 12%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+    width: 400px;
+    height: 600px;
+    padding: 1.25rem;
+
+    border-radius: 0.75rem;
+  }
+  .card img {
+    border-radius: 9999px;
+    width: 100px;
+    margin: 1.75rem;
+  }
+
+  .info {
+    text-align: center;
+    margin-bottom: 1.75rem;
+    align-items: center;
+  }
+
+  h3 {
+    margin-top: 0.25rem;
+    color: hsl(75, 94%, 57%);
+  }
+
+  p {
+    margin: 0.5rem;
+  }
+
+  section {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  button {
+    background-color: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem;
+
+    border: none;
+    border-radius: 0.5rem;
+  }
+  button:hover {
+    background-color: hsl(75, 94%, 57%);
+    color: hsl(0, 0%, 12%);
+  }
+</style>
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
+</head>
+<main>
+  <div class="card">
+    <img src={avatar.src} alt="" />
+    <div class="info">
+      <h1>Jessica Randall</h1>
+      <h3>London, United Kingdom</h3>
+    </div>
+
+    <p>"Front-end developer and avid reader"</p>
+    <section>
+      <button>Github</button>
+      <button>Frontend Mentor</button>
+      <button>LinkedIn</button>
+      <button>Twitter</button>
+      <button>Instagram</button>
+    </section>
+  </div>
+</main>
