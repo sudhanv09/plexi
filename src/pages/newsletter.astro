@@ -1,6 +1,9 @@
 ---
 import news from "../images/newsletter/illustration-sign-up-desktop.svg";
 import listimg from "../images/newsletter/icon-list.svg";
+import success from "../images/newsletter/icon-success.svg"
+
+
 ---
 
 <style>
@@ -13,10 +16,10 @@ import listimg from "../images/newsletter/icon-list.svg";
   body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    /* font-weight: 400; */
     background-color: hsl(235, 18%, 26%);
-    /* background-color: hsl(234, 29%, 20%); */
+    /* background-color: var(--coal_grey); */
     color: hsl(0, 0%, 100%);
+    
 
     display: flex;
     align-items: center;
@@ -77,12 +80,25 @@ import listimg from "../images/newsletter/icon-list.svg";
   input {
     padding: 1rem 2rem;
     border: 0.1px solid hsl(231, 7%, 60%);
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 14px;
   }
 
   input:focus {
     outline: 0.1rem solid hsl(234, 29%, 20%);
   }
+
+  input:invalid {
+    background-color: #ffdddd;
+    border: 0.1px solid hsl(4, 100%, 67%);
+    color: hsl(4, 100%, 67%);
+  }
+
+  .error_msg {
+        color: hsl(4, 100%, 67%);
+        margin-left: 15rem;
+        display: none;
+    }
 
   button {
     margin-top: 20px;
@@ -90,6 +106,7 @@ import listimg from "../images/newsletter/icon-list.svg";
     background-color: hsl(234, 29%, 20%);
     color: hsl(0, 0%, 100%);
     font-weight: 700;
+    cursor: pointer;
 
     border-radius: 0.5rem;
     border: none;
@@ -103,16 +120,46 @@ import listimg from "../images/newsletter/icon-list.svg";
     );
     color: hsl(0, 0%, 100%);
   }
+
+  .modal {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(234, 29%, 20%);
+    display: none;
+
+    width: 450px;
+    padding: 3rem;
+
+    border-radius: 1.75rem;
+  }
+    .modal > img {
+        margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .modal h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .modal p {
+        margin: 0.75rem;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .modal button {
+        width: 100%;
+    }
 </style>
+
+<script src="../lib/newsletter.js" />
 
 <head>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@;0,400;0,700;1,400;1,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
+    type="text/css"
   />
 </head>
 <main>
-  <div class="card">
+  <div id="card" class="card" hidden>
     <div class="card__main">
       <h1>Stay Updated!</h1>
       <p>Join 60,000+ product managers recieving monthly updates on:</p>
@@ -130,15 +177,21 @@ import listimg from "../images/newsletter/icon-list.svg";
         </li>
       </ul>
 
-      <div class="info">
-        <label for="email">Email Address</label>
-        <input type="email" placeholder="email@company.com" />
+      <form class="info">
+        <label for="email">Email Address <span class="error_msg">Email invalid</span></label>
+        <input id="useremail" class="input_error" type="email" placeholder="email@company.com" />
 
         <button>Subscribe to monthly newsletter</button>
-      </div>
+      </form>
     </div>
     <div class="card__side">
       <img src={news.src} alt="newsletter" />
     </div>
+  </div>
+  <div id="modal" class="modal">
+    <img src={success.src} alt="success">
+    <h1>Thanks for Subscribing</h1>
+    <p>A confirmation email has been sent to <strong>ash@loremcompany.com</strong>. Please open it and click the button inside to confirm your subscription.</p>
+    <button>Dismiss message</button>
   </div>
 </main>
