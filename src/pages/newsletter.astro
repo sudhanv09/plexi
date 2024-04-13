@@ -1,0 +1,144 @@
+---
+import news from "../images/newsletter/illustration-sign-up-desktop.svg";
+import listimg from "../images/newsletter/icon-list.svg";
+---
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    /* font-weight: 400; */
+    background-color: hsl(235, 18%, 26%);
+    /* background-color: hsl(234, 29%, 20%); */
+    color: hsl(0, 0%, 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    min-height: 100vh;
+  }
+  .card {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(234, 29%, 20%);
+    display: flex;
+
+    width: 950px;
+    border-radius: 1rem;
+  }
+
+  .card__side {
+    padding: 1.25rem;
+  }
+
+  .card__main {
+    padding: 3rem;
+    text-align: left;
+  }
+
+  .card h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+
+  .card p {
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    line-height: 2.5;
+  }
+
+  ul img {
+    margin-right: 0.5rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 2rem;
+  }
+
+  label {
+    font-size: small;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    padding: 1rem 2rem;
+    border: 0.1px solid hsl(231, 7%, 60%);
+    border-radius: 0.25rem;
+  }
+
+  input:focus {
+    outline: 0.1rem solid hsl(234, 29%, 20%);
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 0.75rem;
+    background-color: hsl(234, 29%, 20%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  button:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 62, 128, 1) 35%,
+      rgba(253, 99, 74, 1) 100%
+    );
+    color: hsl(0, 0%, 100%);
+  }
+</style>
+
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@;0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<main>
+  <div class="card">
+    <div class="card__main">
+      <h1>Stay Updated!</h1>
+      <p>Join 60,000+ product managers recieving monthly updates on:</p>
+      <ul>
+        <li>
+          <span><img src={listimg.src} alt="list.png" /></span>Product discovery
+          and building what matters
+        </li>
+        <li>
+          <span><img src={listimg.src} alt="list.png" /></span>Measuring to
+          ensure updates are a success
+        </li>
+        <li>
+          <span><img src={listimg.src} alt="list.png" /></span>And much more!
+        </li>
+      </ul>
+
+      <div class="info">
+        <label for="email">Email Address</label>
+        <input type="email" placeholder="email@company.com" />
+
+        <button>Subscribe to monthly newsletter</button>
+      </div>
+    </div>
+    <div class="card__side">
+      <img src={news.src} alt="newsletter" />
+    </div>
+  </div>
+</main>
