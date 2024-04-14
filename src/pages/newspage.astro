@@ -1,0 +1,99 @@
+---
+import web3 from "../images/newspage/image-web-3-desktop.jpg";
+import web3m from "../images/newspage/image-web-3-mobile.jpg";
+import gaming from "../images/newspage/image-gaming-growth.jpg";
+import retro from "../images/newspage/image-retro-pcs.jpg";
+import laptops from "../images/newspage/image-top-laptops.jpg";
+import logo from "../images/newspage/logo.svg";
+
+import "../twbase.css";
+---
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="overlay"></div>
+    <div class="relative flex flex-col min-h-screen justify-center">
+     
+      <header class="mx-auto py-5 px-5 max-w-6xl w-full">
+        <nav class="flex items-center justify-between">
+          <img src={logo.src} alt="logo">
+          <section class="hidden md:flex flex-row text-very-dark-blue space-x-16 text-base">
+            <a href="#" class="hover:text-soft-orange">Home</a>
+            <a href="#" class="hover:text-soft-orange">New</a>
+            <a href="#" class="hover:text-soft-orange">Popular</a>
+            <a href="#" class="hover:text-soft-orange">Trending</a>
+            <a href="#" class="hover:text-soft-orange">Categories</a>
+          </section>
+        </nav>
+      </header>
+  
+      <main class="md:grid grid-cols-3 gap-4 max-w-6xl px-5 mx-auto">
+        
+        <div class="flex flex-col  mx-auto md:col-span-2">
+          <img class="md:hidden" src={web3m.src} alt="image-web-3-mobile">
+          <img class="hidden md:block" src={web3.src} alt="image-web-3-mobile">
+        </div>
+  
+        <section>
+          <h1 class="text-dark-blue text-5xl font-bold">The Bright Future of Web 3.0?</h1>
+        </section>
+  
+        <section class="space-y-4">
+          <p class="text-dark-grayish-blue"> We dive into the next evolution of the web that claims to put the power of the platforms back
+            into
+            the hands of
+            the
+            people.
+            But is it really fulfilling its promise?</p>
+          <button
+            class="w-1/2 px-5 py-5 bg-soft-red hover:bg-dark-blue text-off-white font-semibold text-lg tracking-widest text-center">READ
+            MORE</button>
+        </section>
+  
+        <article
+          class="flex flex-col text-left bg-dark-blue text-off-white my-20 py-8 px-6 col-start-3 row-start-1 row-end-3 md:my-0 md:mx-0  md:justify-center">
+          <h2 class="text-soft-orange text-3xl font-bold">New</h2>
+          <h3 class="pt-8 text-xl font-bold mb-2 hover:text-soft-orange cursor-pointer">Hydrogen VS Electric Cars</h3>
+          <p class="text-dark-grayish-blue border-b border-grayish-blue pb-10">Will hydrogen-fueled cars ever catch up to EVs?
+          </p>
+  
+          <h3 class="pt-6 text-xl font-bold mb-2 hover:text-soft-orange cursor-pointer">The Downsides of AI Artistry</h3>
+          <p class="text-dark-grayish-blue border-b border-grayish-blue pb-10">What are the possible adverse effects of
+            on-demand
+            AI image generation?</p>
+  
+          <h3 class="pt-6 text-xl font-bold mb-2 hover:text-soft-orange cursor-pointer">Is VC Funding Drying Up?</h3>
+          <p class="text-dark-grayish-blue">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </article>
+  
+        <!-- LIST -->
+        <section class="flex flex-row space-x-4  py-5 md:px-0">
+          <img class="w-auto h-36" src={retro.src} alt="image-retro">
+          <div class="list mx-auto space-y-2">
+            <h2 class="text-grayish-blue text-3xl font-bold">01</h2>
+            <h3 class="font-bold text-xl text-dark-blue hover:text-soft-red cursor-pointer">Reviving Retro PCs</h3>
+            <p class="text-dark-grayish-blue">What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </section>
+  
+        <section class="flex flex-row space-x-4 py-5 md:px-0">
+          <img class="w-auto h-36" src={laptops.src} alt="image-laptops-keyboard">
+          <div class="list mx-auto space-y-2">
+            <h2 class="text-grayish-blue text-3xl font-bold">02</h2>
+            <h3 class="font-bold text-xl text-dark-blue hover:text-soft-red cursor-pointer">10 Laptops of 2022</h3>
+            <p class="text-dark-grayish-blue">Our best picks for various needs and budgets.</p>
+          </div>
+        </section>
+  
+        <section class="flex flex-row space-x-4  py-5 md:px-0">
+          <img class="w-auto h-36" src={gaming.src} alt="image-gaming">
+          <div class="list mx-auto space-y-2">
+            <h2 class="text-grayish-blue text-3xl font-bold">03</h2>
+            <h3 class="font-bold text-xl text-dark-blue hover:text-soft-red cursor-pointer">The Growth of Gaming</h3>
+            <p class="text-dark-grayish-blue">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
