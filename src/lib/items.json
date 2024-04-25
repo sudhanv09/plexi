@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Blog Preview Card",
+    "Img": "./src/images/index/blog.jpg",
+    "Tags": ["CSS", "HTML"],
+    "Link": "card"
+  },
+  {
+    "Name": "Recipe Page",
+    "Img": "./src/images/index/recipe.jpg",
+    "Tags": ["CSS", "HTML"],
+    "Link": "recipe"
+  },
+  {
+    "Name": "Social Links Profile",
+    "Img": "./src/images/index/social.jpg",
+    "Tags": ["CSS", "HTML"],
+    "Link": "social"
+  },
+  {
+    "Name": "Newsletter sign-up form",
+    "Img": "./src/images/index/newsletter.jpg",
+    "Tags": ["CSS", "HTML", "JS"],
+    "Link": "newsletter"
+  },
+  {
+    "Name": "News homepage",
+    "Img": "./src/images/index/news.jpg",
+    "Tags": ["CSS", "HTML"],
+    "Link": "newspage"
+  }
+]

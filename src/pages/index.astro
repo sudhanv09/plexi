@@ -1,18 +1,97 @@
 ---
-
+import item from "../lib/items.json";
 ---
 
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap");
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Figtree", sans-serif;
+    font-size: 15px;
+    margin: 5rem;
+
+    background-color: hsl(217, 54%, 11%);
+    color: hsl(0, 0%, 100%);
+  }
+
+  @media (max-width: 360px) {
+	body {
+		margin: 0;
+	}
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 6rem;
+	place-items: center;
+	width: 100%;
+  }
+
+  a,
+  a:visited,
+  a:visited,
+  a:hover {
+    color: inherit;
+  }
+
+  .item {
+    background-color: hsl(205, 50%, 16%);
+    width: 400px;
+    height: auto;
+    text-align: center;
+    border-radius: 1rem;
+    text-decoration: none;
+	overflow: hidden;
+  }
+
+  img {
+    width: inherit;
+    height: 300px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 10px;
+    margin: 1rem;
+  }
+
+  .tag_item {
+    color: hsl(0, 0, 100%);
+    width: max-content;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+</style>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<a href="/frontend">Frontend</a>
-		
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Plexi</h1>
+    <div class="projects">
+      {
+        item.map((data) => (
+          <a class="item" href={data.Link}>
+            <img src={data.Img} alt="" />
+            <h2>{data.Name}</h2>
+            <div class="tags">
+              {data.Tags.map((tag) => (
+                <p class="tag_item">{tag}</p>
+              ))}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </body>
 </html>
