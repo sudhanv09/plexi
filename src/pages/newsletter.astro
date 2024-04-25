@@ -2,8 +2,6 @@
 import news from "../images/newsletter/illustration-sign-up-desktop.svg";
 import listimg from "../images/newsletter/icon-list.svg";
 import success from "../images/newsletter/icon-success.svg"
-
-
 ---
 
 <style>
@@ -17,16 +15,15 @@ import success from "../images/newsletter/icon-success.svg"
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     background-color: hsl(235, 18%, 26%);
-    /* background-color: var(--coal_grey); */
     color: hsl(0, 0%, 100%);
     
-
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
     min-height: 100vh;
   }
+
   .card {
     background-color: hsl(0, 0%, 100%);
     color: hsl(234, 29%, 20%);
@@ -168,6 +165,7 @@ import success from "../images/newsletter/icon-success.svg"
     height: 1em;
     width: 1em;
   }
+
 </style>
 
 <script src="../lib/newsletter.js" />
@@ -178,6 +176,7 @@ import success from "../images/newsletter/icon-success.svg"
     rel="stylesheet"
     type="text/css"
   />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <a href="/">
   <svg
@@ -196,7 +195,7 @@ import success from "../images/newsletter/icon-success.svg"
   Home
 </a>
 <main>
-  <div id="card" class="card" hidden>
+  <div id="card" class="card" hidden>  
     <div class="card__main">
       <h1>Stay Updated!</h1>
       <p>Join 60,000+ product managers recieving monthly updates on:</p>
