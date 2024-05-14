@@ -28,5 +28,11 @@
     "Img": "./news.jpg",
     "Tags": ["CSS", "HTML"],
     "Link": "newspage"
+  },
+  {
+    "Name": "FAQ Accordion",
+    "Img": "./faq.jpg",
+    "Tags": ["CSS", "HTML"],
+    "Link": "faq"
   }
 ]

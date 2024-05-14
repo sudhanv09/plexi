@@ -2,6 +2,7 @@
 import item from "../lib/items.json";
 ---
 
+
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600&display=swap");
   body {
@@ -19,24 +20,27 @@ import item from "../lib/items.json";
   }
 
   @media (max-width: 520px) {
-	body {
-		margin: 0;
-	}
+    body {
+      margin: 0;
+    }
   }
 
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 6rem;
-	place-items: center;
-	width: 100%;
+    place-items: center;
+    width: 100%;
   }
 
   a,
   a:visited,
-  a:visited,
-  a:hover {
+  a:visited {
     color: inherit;
+  }
+
+  h2:hover {
+    color: #a855f7;
   }
 
   .item {
@@ -46,7 +50,7 @@ import item from "../lib/items.json";
     text-align: center;
     border-radius: 1rem;
     text-decoration: none;
-	overflow: hidden;
+    overflow: hidden;
   }
 
   img {
