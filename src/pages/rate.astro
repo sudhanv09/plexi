@@ -1,0 +1,225 @@
+---
+import star from "../images/rate/icon-star.svg";
+import thank from "../images/rate/illustration-thank-you.svg";
+---
+
+<script>
+  let val = document.getElementById("rate_val");
+  let b = document.querySelectorAll(".rating button");
+  b.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      val.textContent = e.target.value;
+    })
+  );
+
+  const card_btn = document.getElementById("submit_btn");
+  const card = document.querySelector(".card");
+  const status = document.querySelector(".status");
+
+  card_btn.addEventListener("click", () => {
+    card.style.display = "none";
+    status.style.display = "flex";
+  });
+</script>
+
+<style>
+  :root {
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --btn-light: rgb(39, 55, 71);
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: "Overpass", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--very-dark-blue);
+    color: white;
+    margin: auto;
+    font-size: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background-color: var(--dark-blue);
+    width: 400px;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: block;
+  }
+
+  .card img {
+    background-color: var(--btn-light);
+    padding: 1rem;
+    border-radius: 9999px;
+  }
+
+  .card p {
+    color: var(--light-grey);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    margin-top: 1.5rem;
+  }
+
+  .submit_btn {
+    background-color: orange;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem;
+    width: 100%;
+    border-color: transparent;
+    border-radius: 2rem;
+  }
+
+  .submit_btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: orange;
+  }
+
+  .rating {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rate_btn {
+    background-color: var(--btn-light);
+    color: var(--medium-grey);
+    border-color: transparent;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .rate_btn:hover:not(:focus) {
+    background-color: orange;
+    color: white;
+  }
+
+  .rate_btn:focus {
+    background-color: var(--light-grey);
+    color: white;
+  }
+
+  .status {
+    background-color: var(--dark-blue);
+    width: 440px;
+    padding: 2.5rem;
+    border-radius: 1rem;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .status p {
+    color: var(--medium-grey);
+    margin-top: 0.5rem;
+  }
+
+  .chip > p {
+    color: orange;
+    background-color: var(--btn-light);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    margin: 2rem 0 1rem 0;
+  }
+
+  a {
+    align-self: flex-start;
+    left: 3rem;
+    top: 3rem;
+    position: absolute;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: hsl(0, 0%, 100%);
+  }
+
+  a:link {
+    color: hsl(0, 0%, 100%);
+  }
+
+  svg {
+    line-height: 1;
+    height: 1em;
+    width: 1em;
+  }
+</style>
+
+<head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Overpass:ital,wght@0,400;1,400;0,700;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<a href="/">
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6 22.8787C4.34315 22.8787 3 21.5355 3 19.8787V9.87866C3 9.84477 3.00169 9.81126 3.00498 9.77823H3C3 9.20227 3.2288 8.64989 3.63607 8.24262L9.87868 2.00002C11.0502 0.828445 12.9497 0.828445 14.1213 2.00002L20.3639 8.24264C20.7712 8.6499 21 9.20227 21 9.77823H20.995C20.9983 9.81126 21 9.84477 21 9.87866V19.8787C21 21.5355 19.6569 22.8787 18 22.8787H6ZM12.7071 3.41423L19 9.70713V19.8787C19 20.4309 18.5523 20.8787 18 20.8787H15V15.8787C15 14.2218 13.6569 12.8787 12 12.8787C10.3431 12.8787 9 14.2218 9 15.8787V20.8787H6C5.44772 20.8787 5 20.4309 5 19.8787V9.7072L11.2929 3.41423C11.6834 3.02371 12.3166 3.02371 12.7071 3.41423Z"
+      fill="currentColor"></path>
+  </svg>
+  Home
+</a>
+<main>
+  <div class="card">
+    <img src={star.src} alt="star" />
+    <h1>How did we do?</h1>
+    <p>
+      Please let us know how we did with your support request. All feedback is
+      appreciated to help us improve our offering!
+    </p>
+    <div class="rating">
+      <button class="rate_btn" value="1">1</button>
+      <button class="rate_btn" value="2">2</button>
+      <button class="rate_btn" value="3">3</button>
+      <button class="rate_btn" value="4">4</button>
+      <button class="rate_btn" value="5">5</button>
+    </div>
+    <button id="submit_btn" type="submit" class="submit_btn">SUBMIT</button>
+  </div>
+</main>
+
+<div class="status">
+  <img src={thank.src} alt="thank_you" />
+  <div class="chip">
+    <p>You selected <span id="rate_val"></span> out of 5</p>
+  </div>
+  <h1>Thank You!</h1>
+  <p>
+    We appreciate you taking the time to give a rating. If you ever need more
+    support, don't hesitate to get in touch!
+  </p>
+</div>
