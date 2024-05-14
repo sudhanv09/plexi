@@ -4,17 +4,19 @@ import thank from "../images/rate/illustration-thank-you.svg";
 ---
 
 <script>
-  let val = document.getElementById("rate_val");
+  let val = document.getElementById("rate_val") as HTMLElement;
   let b = document.querySelectorAll(".rating button");
   b.forEach((btn) =>
     btn.addEventListener("click", (e) => {
-      val.textContent = e.target.value;
+      const target = e.target as HTMLButtonElement
+      if (!target) return;
+      val.textContent = target.value;
     })
   );
 
-  const card_btn = document.getElementById("submit_btn");
-  const card = document.querySelector(".card");
-  const status = document.querySelector(".status");
+  const card_btn = document.getElementById("submit_btn") as HTMLElement;
+  const card = document.querySelector(".card") as HTMLElement;
+  const status = document.querySelector(".status") as HTMLElement;
 
   card_btn.addEventListener("click", () => {
     card.style.display = "none";
