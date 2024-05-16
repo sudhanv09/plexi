@@ -1,0 +1,240 @@
+---
+import Layout from "./_layout.astro";
+---
+
+<script src="../lib/tip.ts"></script>
+
+<style>
+  :root {
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --greenish-cyan: hsl(184, 14%, 56%);
+    --light-greenish-cyan: hsl(185, 41%, 84%);
+    --very-light-greenish-cyan: hsl(189, 41%, 97%);
+
+    --disabled_btn: hsl(183, 64%, 25%);
+  }
+
+  * {
+    font-family: "Space Mono", sans-serif;
+  }
+
+  body {
+    background-color: var(--light-greenish-cyan);
+  }
+
+  .card {
+    background-color: white;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+
+  .card__input {
+    margin-right: 3rem;
+  }
+
+  .card__disp {
+    background-color: var(--very-dark-cyan);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .tip_grp {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  h1 {
+    color: var(--very-dark-cyan);
+  }
+
+  input {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    border-color: transparent;
+    border-radius: 0.5rem;
+    text-align: right;
+    font-size: 24px;
+    color: var(--very-dark-cyan);
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+  }
+
+  input:focus {
+    outline: var(--very-light-greenish-cyan);
+    border-color: var(--very-light-greenish-cyan);
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .tip_inp {
+    background: url("../images/tip/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: var(--very-light-greenish-cyan);
+  }
+
+  .ppl_inp {
+    background: url("../images/tip/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: var(--very-light-greenish-cyan);
+  }
+
+  .btn {
+    background-color: var(--very-dark-cyan);
+    color: white;
+    width: 100px;
+    height: 48px;
+    font-size: 24px;
+    border-color: transparent;
+    border-radius: 0.5rem;
+  }
+
+  .btn:hover {
+    background-color: var(--light-greenish-cyan);
+    color: var(--very-dark-cyan);
+  }
+
+  .btn:focus {
+    background-color: lightseagreen;
+    color: var(--very-dark-cyan);
+  }
+
+  p,
+  label,
+  .bg {
+    color: var(--greenish-cyan);
+  }
+
+  .bg {
+    font-size: 14px;
+  }
+
+  .tip_amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .total_amount {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card__ppl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+
+  .error {
+    color: rgb(252, 125, 125);
+    visibility: hidden;
+  }
+
+  .card__disp h1 {
+    color: lightseagreen;
+    font-size: 36px;
+  }
+
+  .reset_btn {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .btn:disabled {
+    background-color: var(--disabled_btn);
+    color: var(--very-dark-cyan);
+  }
+</style>
+
+<Layout>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <main>
+    <div class="title">
+      <h1>SPLI <br /> TTER</h1>
+    </div>
+    <div class="card">
+      <div class="card__input">
+        <label for="amount">Bill</label>
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          class="tip_inp"
+          placeholder="0"
+        />
+
+        <p>Select Tip %</p>
+        <div class="tip_grp">
+          <button value="5" class="btn">5%</button>
+          <button value="10" class="btn">10%</button>
+          <button value="15" class="btn">15%</button>
+          <button value="25" class="btn">25%</button>
+          <button value="50" class="btn">50%</button>
+          <input
+            type="number"
+            name="custom_tip"
+            id="custom"
+            placeholder="Custom"
+          />
+        </div>
+
+        <div class="card__ppl">
+          <label for="num_ppl">Number of People</label>
+          <p id="errorMsg" class="error">Can't be zero</p>
+        </div>
+        <input
+          type="number"
+          name="num_ppl"
+          id="num_ppl"
+          class="ppl_inp"
+          placeholder="0"
+        />
+        
+      </div>
+      <div class="card__disp">
+        <div class="tip_amount">
+          <h4>Tip Amount <span class="bg"><br />/ person</span></h4>
+          <h1 id="tip">$0.00</h1>
+        </div>
+        <div class="total_amount">
+          <h4>Total Amount <span class="bg"><br />/ person</span></h4>
+          <h1 id="total">$0.00</h1>
+        </div>
+        <button class="btn reset_btn" disabled>RESET</button>
+      </div>
+    </div>
+  </main>
+</Layout>

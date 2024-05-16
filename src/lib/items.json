@@ -40,5 +40,11 @@
     "Img": "./rate.jpg",
     "Tags": ["CSS", "HTML", "JS"],
     "Link": "rate"
+  },
+  {
+    "Name": "Tip Calculator",
+    "Img": "./tip.jpg",
+    "Tags": ["CSS", "HTML", "JS"],
+    "Link": "tip"
   }
 ]
