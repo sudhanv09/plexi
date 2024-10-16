@@ -1,0 +1,109 @@
+---
+import "../twbase.css";
+
+import { Image } from "astro:assets";
+import IllustrationFiveStars from "../images/bento/illustration-five-stars.webp";
+import IllustrationMultiplePlatforms from "../images/bento/illustration-multiple-platforms.webp";
+import IllustrationConsistenSchedule from "../images/bento/illustration-consistent-schedule.webp";
+import IllustrationGrowFollowers from "../images/bento/illustration-grow-followers.webp";
+import IllustrationSchedulePost from "../images/bento/illustration-schedule-posts.webp";
+import IllustrationAudienceGrowth from "../images/bento/illustration-audience-growth.webp";
+import IllustrationCreatePost from "../images/bento/illustration-create-post.webp";
+import IllustrationAIContent from "../images/bento/illustration-ai-content.webp";
+---
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body class="font-primary bg-grey-100">
+    <main class="container mx-auto p-6 max-w-screen-lg">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 lg:grid-rows-6">
+            <div class="row-start-1 md:col-span-4 lg:col-span-2 lg:row-span-2 lg:col-start-2 lg:row-start-1 rounded-lg bg-purple-500 flex gap-3 justify-center flex-col items-center text-center p-6">
+                <h1 class="text-white text-4xl font-semibold lg:text-5xl">
+                    Social Media
+                    <span class="text-yellow-500">10x</span>
+                    <i>Faster</i> with AI
+                </h1>
+                <Image
+                    src={IllustrationFiveStars}
+                    alt="Five starts"
+                    class="w-1/2"
+                />
+                <p class="text-white text-sm">Over 4,000 5-star reviews</p>
+            </div>
+            <div class="md:col-span-4 md:row-span-1 lg:row-span-2 lg:col-span-1 lg:col-start-2 lg:row-start-3 rounded-lg bg-white p-6">
+                <Image
+                    src={IllustrationMultiplePlatforms}
+                    alt="Manage multiple accounts and platforms image"
+                />
+                <h2 class="text-black text-2xl xlg:text-3xl font-semibold pt-6">
+                    Manage multiple accounts and platforms.
+                </h2>
+            </div>
+            <div class="md:col-span-4 md:row-span-1 lg:col-span-1 lg:row-span-2 lg:col-start-3 lg:row-start-3 rounded-lg bg-yellow-500 pb-0 ga5 overflow-hidden  pt-6 pl-6 pr-16 lg:pr-6">
+                <h2 class="text-black text-2xl xlg:text-3xl font-semibold pr-6">
+                    Maintain a consistent posting schedule.
+                </h2>
+                <Image
+                    src={IllustrationConsistenSchedule}
+                    alt="Maintain a consistent posting schedule. image"
+                    class="relative pt-2 -bottom-14 w-1/2 lg:w-full"
+                />
+            </div>
+            <div class="md:col-span-4 lg:row-span-3 lg:col-span-1 rounded-lg bg-yellow-100 p-6 flex gap-3 flex-col lg:pt-10">
+                <h2 class="text-black text-2xl xlg:text-3xl font-semibold">
+                    Create and schedule content
+                    <i class="text-purple-500">quicker.</i>
+                </h2>
+                <Image
+                    src={IllustrationCreatePost}
+                    alt="Illustration create post image"
+                />
+            </div>
+            <div class="md:col-span-4 md:row-span-1 lg:row-span-3 lg:col-start-1 lg:col-span-1 lg:row-start-4 rounded-lg bg-yellow-500 p-6 flex gap-8 flex-col">
+                <h2 class="text-black text-2xl lg:text-3xl font-semibold">
+                    Write your content using AI.
+                </h2>
+                <Image
+                    src={IllustrationAIContent}
+                    alt="AI illustration content image"
+                />
+            </div>
+            <div class="row-start-5 md:col-span-4 md:row-span-1 md:row-start-6 lg:row-span-2 lg:col-span-1 lg:col-start-2 lg:row-start-5 rounded-lg bg-white p-6 flex gap-3 flex-col">
+                <h2 class="text-black text-3xl font-semibold">>56%</h2>
+                <p>faster audience growth</p>
+                <Image
+                    src={IllustrationAudienceGrowth}
+                    class="pt-6"
+                    alt="Audience growth image"
+                />
+            </div>
+            <div class="items-center justify-center row-start-4 md:col-span-4 md:row-span-1 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-5 rounded-lg bg-purple-500 flex gap-3 flex-col lg:flex-row p-6 md:py">
+                <Image
+                    src={IllustrationGrowFollowers}
+                    alt="Grow followers image"
+                    class="max-h-full lg:max-w-[15rem]"
+                />
+                <h2
+                    class="text-white text-3xl lg:text-3xl font-semibold text-center md:text-start"
+                >
+                    Grow followers with non-stop content.
+                </h2>
+            </div>
+            <div class="md:col-span-4 md:row-span-1 lg:row-span-4 lg:col-span-1 lg:col-start-4 lg:row-start-1 rounded-lg bg-purple-100 flex gap-3 flex-col p-6 overflow-hidden">
+                <h2 class="text-black text-2xl xlg:text-3xl font-semibold">
+                    Schedule to social media.
+                </h2>
+                <Image
+                    src={IllustrationSchedulePost}
+                    class="my-2 lg:flex-1 lg:object-cover lg:object-left-top lg:max-w-[30ch]"
+                    alt="AI illustration content image"
+                />
+                <p class="text-black">
+                    Optimize post timings to publish content at the perfect time
+                    for your audience.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
