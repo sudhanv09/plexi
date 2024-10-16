@@ -46,5 +46,11 @@
     "Img": "./tip.jpg",
     "Tags": ["CSS", "HTML", "JS"],
     "Link": "tip"
+  },
+{
+    "Name": "Bento Grid",
+    "Img": "./bento.jpg",
+    "Tags": ["CSS", "HTML"],
+    "Link": "bento"
   }
 ]
